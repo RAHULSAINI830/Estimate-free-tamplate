@@ -17,7 +17,7 @@
             min-height: 100vh;
         }
 
-        .container {
+        .bill-container {
             width: 900px;
             max-width: 100%;
             margin: 20px;
@@ -30,13 +30,13 @@
             overflow: hidden;
         }
 
-        .header {
+        .bill-header {
             text-align: center;
             margin-bottom: 20px;
             position: relative;
         }
 
-        .logo-upload {
+        .bill-logo-upload {
             position: absolute;
             top: 10px;
             right: 10px;
@@ -51,27 +51,27 @@
             border-radius: 5px;
         }
 
-        .logo-upload input {
+        .bill-logo-upload input {
             display: none;
         }
 
-        .logo-upload img {
+        .bill-logo-upload img {
             max-width: 100%;
             max-height: 100%;
         }
 
-        .form-group {
+        .bill-form-group {
             margin-bottom: 15px;
         }
 
-        .form-group label {
+        .bill-form-group label {
             display: block;
             margin-bottom: 5px;
             color: #333;
         }
 
-        .form-group input,
-        .form-group textarea {
+        .bill-form-group input,
+        .bill-form-group textarea {
             width: 100%;
             padding: 10px;
             box-sizing: border-box;
@@ -81,22 +81,22 @@
             transition: border-color 0.3s;
         }
 
-        .form-group input:focus,
-        .form-group textarea:focus {
+        .bill-form-group input:focus,
+        .bill-form-group textarea:focus {
             border-color: #ee5566;
         }
 
-        .two-column {
+        .bill-two-column {
             display: flex;
             justify-content: space-between;
             gap: 10px;
         }
 
-        .two-column .form-group {
+        .bill-two-column .bill-form-group {
             width: 48%;
         }
 
-        .full-width {
+        .bill-full-width {
             width: 100%;
         }
 
@@ -141,17 +141,17 @@
             border-color: #ee5566;
         }
 
-        .total {
+        .bill-total {
             text-align: right;
             margin-top: 20px;
         }
 
-        .total label {
+        .bill-total label {
             margin-right: 10px;
             color: #333;
         }
 
-        .total input {
+        .bill-total input {
             width: auto;
             text-align: right;
             padding: 5px;
@@ -159,12 +159,12 @@
             border-radius: 5px;
         }
 
-        .footer {
+        .bill-footer {
             text-align: center;
             margin-top: 20px;
         }
 
-        button {
+        .bill-button {
             background-color: #ee5566;
             color: white;
             padding: 10px 20px;
@@ -174,15 +174,15 @@
             transition: background-color 0.3s;
         }
 
-        button:hover {
+        .bill-button:hover {
             background-color: #dd4455;
         }
 
-        button:focus {
+        .bill-button:focus {
             outline: none;
         }
 
-        .remove-button {
+        .bill-remove-button {
             background-color: #dc3545;
             color: white;
             border: none;
@@ -192,20 +192,20 @@
             width: 80px;
         }
 
-        .remove-button:hover {
+        .bill-remove-button:hover {
             background-color: #c82333;
         }
 
-        .hidden {
+        .bill-hidden {
             display: none !important;
         }
 
-        .no-print {
+        .bill-no-print {
             display: table-cell;
         }
 
         @media print {
-            .no-print {
+            .bill-no-print {
                 display: none;
             }
         }
@@ -216,64 +216,64 @@
 
 <body>
 
-    <div class="container" id="billContainer">
-        <div class="header">
+    <div class="bill-container" id="billContainer">
+        <div class="bill-header">
             <h1>Quote</h1>
             <p><a href="https://zentrades.pro"><br></a></p>
-            <div class="logo-upload" onclick="document.getElementById('logoUpload').click()">
+            <div class="bill-logo-upload" onclick="document.getElementById('logoUpload').click()">
                 <img id="logoPreview" src="" alt="Logo Preview" style="display: none;">
                 <span id="uploadText">Upload Logo</span>
                 <input type="file" id="logoUpload" accept="image/*" onchange="previewLogo(event)">
             </div>
         </div>
 
-        <div class="form-group">
+        <div class="bill-form-group">
             <label for="companyName">Company</label>
             <input type="text" id="companyName" name="companyName">
         </div>
-        <div class="two-column">
-            <div class="form-group">
+        <div class="bill-two-column">
+            <div class="bill-form-group">
                 <label for="companyAddress">Address</label>
                 <input type="text" id="companyAddress" name="companyAddress">
             </div>
-            <div class="form-group">
+            <div class="bill-form-group">
                 <label for="companyCity">City, State, ZIP</label>
                 <input type="text" id="companyCity" name="companyCity">
             </div>
         </div>
-        <div class="two-column">
-            <div class="form-group">
+        <div class="bill-two-column">
+            <div class="bill-form-group">
                 <label for="companyEmail">Email Address</label>
                 <input type="email" id="companyEmail" name="companyEmail">
             </div>
-            <div class="form-group">
+            <div class="bill-form-group">
                 <label for="companyPhone">Phone Number</label>
                 <input type="text" id="companyPhone" name="companyPhone" oninput="this.value = this.value.replace(/[^0-9]/g, '');">
             </div>
         </div>
-        <div class="form-group">
+        <div class="bill-form-group">
             <label for="companyWebsite">Company Website</label>
             <input type="text" id="companyWebsite" name="companyWebsite">
         </div>
-        <div class="two-column">
-            <div class="form-group">
+        <div class="bill-two-column">
+            <div class="bill-form-group">
                 <label for="clientCompanyName">Client</label>
                 <input type="text" id="clientCompanyName" name="clientCompanyName">
             </div>
-            <div class="form-group">
+            <div class="bill-form-group">
                 <label for="quoteNumber">Quote Number</label>
                 <input type="text" id="quoteNumber" name="quoteNumber" oninput="this.value = this.value.replace(/[^0-9]/g, '');">
             </div>
         </div>
-        <div class="form-group">
+        <div class="bill-form-group">
             <label for="quoteSubject">Quote Subject</label>
             <input type="text" id="quoteSubject" name="quoteSubject">
         </div>
-        <div class="form-group full-width">
+        <div class="bill-form-group bill-full-width">
             <label for="quoteTerms">Quote Terms</label>
             <input type="text" id="quoteTerms" name="quoteTerms">
         </div>
-        <div class="form-group full-width">
+        <div class="bill-form-group bill-full-width">
             <label for="dateDue">Date Due</label>
             <input type="date" id="dateDue" name="dateDue">
         </div>
@@ -286,7 +286,7 @@
                     <th>Qty</th>
                     <th>Unit Cost</th>
                     <th>Total</th>
-                    <th class="no-print">Remove</th>
+                    <th class="bill-no-print">Remove</th>
                 </tr>
             </thead>
             <tbody id="quoteTable">
@@ -296,43 +296,43 @@
                     <td><input type="number" name="qty" oninput="updateRowTotal(this)"></td>
                     <td><input type="number" name="unitCost" oninput="updateRowTotal(this)"></td>
                     <td><input type="number" name="rowTotal" readonly></td>
-                    <td class="no-print"><button type="button" class="remove-button" onclick="removeRow(this)">Remove</button></td>
+                    <td class="bill-no-print"><button type="button" class="bill-remove-button" onclick="removeRow(this)">Remove</button></td>
                 </tr>
             </tbody>
         </table>
 
-        <div class="form-group">
-            <button type="button" onclick="addRow()">Add Row</button>
+        <div class="bill-form-group">
+            <button type="button" class="bill-button" onclick="addRow()">Add Row</button>
         </div>
 
-        <div class="total">
+        <div class="bill-total">
             <label for="subtotal">Subtotal: </label>
             <input type="number" id="subtotal" name="subtotal" readonly>
         </div>
-        <div class="total">
+        <div class="bill-total">
             <label for="discount">Discount (%): </label>
             <input type="number" id="discount" name="discount" value="0" oninput="calculateTotals()">
         </div>
-        <div class="total">
+        <div class="bill-total">
             <label for="taxRate">Tax Rate (%): </label>
             <input type="number" id="taxRate" name="taxRate" value="5" oninput="calculateTotals()">
         </div>
-        <div class="total">
+        <div class="bill-total">
             <label for="taxTotal">Tax Total: </label>
             <input type="number" id="taxTotal" name="taxTotal" readonly>
         </div>
-        <div class="total">
+        <div class="bill-total">
             <label for="quoteTotal">Quote Total: </label>
             <input type="number" id="quoteTotal" name="quoteTotal" readonly>
         </div>
 
-        <div class="form-group">
+        <div class="bill-form-group">
             <label for="notes">Notes:</label>
             <textarea id="notes" name="notes" rows="4"></textarea>
         </div>
 
-        <div class="footer">
-            <button type="button" onclick="downloadPDF()">Download Template</button>
+        <div class="bill-footer">
+            <button type="button" class="bill-button" onclick="downloadPDF()">Download Template</button>
         </div>
     </div>
 
@@ -343,7 +343,7 @@
             logoPreview.src = URL.createObjectURL(event.target.files[0]);
             logoPreview.style.display = 'block';
             uploadText.style.display = 'none';
-            document.querySelector('.logo-upload').style.background = 'none';
+            document.querySelector('.bill-logo-upload').style.background = 'none';
         }
 
         function addRow() {
@@ -355,7 +355,7 @@
             <td><input type="number" name="qty" oninput="updateRowTotal(this)"></td>
             <td><input type="number" name="unitCost" oninput="updateRowTotal(this)"></td>
             <td><input type="number" name="rowTotal" readonly></td>
-            <td class="no-print"><button type="button" class="remove-button" onclick="removeRow(this)">Remove</button></td>
+            <td class="bill-no-print"><button type="button" class="bill-remove-button" onclick="removeRow(this)">Remove</button></td>
         `;
         }
 
@@ -405,10 +405,10 @@
             const buttonsToRemove = clonedContainer.querySelectorAll('button');
             buttonsToRemove.forEach(button => button.remove());
 
-            const removeButtons = clonedContainer.querySelectorAll('.remove-button');
+            const removeButtons = clonedContainer.querySelectorAll('.bill-remove-button');
             removeButtons.forEach(button => button.remove());
 
-            const removeColumns = clonedContainer.querySelectorAll('.no-print');
+            const removeColumns = clonedContainer.querySelectorAll('.bill-no-print');
             removeColumns.forEach(col => col.remove());
 
             // Convert input fields to plain text in the cloned container
@@ -435,7 +435,6 @@
                 const imgWidth = 210;
                 const imgHeight = canvas.height * imgWidth / canvas.width;
                 doc.addImage(imgData, 'PNG', 0, 0, imgWidth, imgHeight);
-
 
                 doc.save('quote.pdf');
 
