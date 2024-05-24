@@ -436,19 +436,6 @@
                 const imgHeight = canvas.height * imgWidth / canvas.width;
                 doc.addImage(imgData, 'PNG', 0, 0, imgWidth, imgHeight);
 
-                // Add watermark logo and text
-                const watermarkImage = '/images/download.jpeg'; // replace with your logo URL or base64
-                const watermarkText = 'provided By'; // replace with your desired text
-                const watermarkLink = 'https://zentrades.pro'; // replace with your desired URL
-                const linkWidth = 30; // width of the clickable area
-                const linkHeight = 30; // height of the clickable area
-                const linkX = 10; // x position of the clickable area
-                const linkY = doc.internal.pageSize.getHeight() - 20; // y position of the clickable area
-
-                // Add image and text
-                doc.addImage(watermarkImage, 'PNG', 10, doc.internal.pageSize.getHeight() - 20, 15, 15);
-                doc.text(watermarkText, 28, doc.internal.pageSize.getHeight() - 10);
-
                 // Add clickable link
                 doc.link(linkX, linkY, linkWidth, linkHeight, { url: watermarkLink });
 
