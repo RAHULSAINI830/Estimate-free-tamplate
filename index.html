@@ -436,8 +436,6 @@
                 const imgHeight = canvas.height * imgWidth / canvas.width;
                 doc.addImage(imgData, 'PNG', 0, 0, imgWidth, imgHeight);
 
-                // Add clickable link
-                doc.link(linkX, linkY, linkWidth, linkHeight, { url: watermarkLink });
 
                 doc.save('quote.pdf');
 
